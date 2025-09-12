@@ -1,0 +1,40 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.btn {
+  margin: 3px;
+}
+
+#pantalla {
+  background-color: #000;
+  color: #0f0;
+  padding: 15px;
+  font-size: 24px;
+  border-radius: 10px;
+  text-align: right;
+  margin-bottom: 20px;
+  min-height: 40px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3px;
+}
+
+.clear-row {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+
+.clear {
+  background-color: #ff6666;
+  color: white;
+  font-weight: bold;
+  height: 30px;
+}
