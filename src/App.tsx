@@ -3,7 +3,7 @@ import "./App.css";
 
 function App() {
   const [input, setInput] = useState("");
-  const [buttons, setButtons] = useState<string[]>([
+  const [buttons] = useState<string[]>([
     "7",
     "8",
     "9",
@@ -21,11 +21,8 @@ function App() {
     "=",
     "+",
   ]);
-  // const [valueCurrent, setCurrent] = useState("");
 
-  // setInput("Hola mundo");
-
-  function handleClick(e: any, value: string) {
+  function handleClick(value: string) {
     if (value === "=") {
       try {
         const expression = input.replace("x", "*").replace("÷", "/");
@@ -68,11 +65,6 @@ function App() {
       }
     }
   }
-
-  function MyButton(values: string[]) {
-    return;
-  }
-
   return (
     <div className="max-w-sm mx-auto mt-12 p-6 bg-gray-100 rounded-xl shadow-lg font-sans">
       <h1 className="text-center text-2xl font-bold mb-6 text-gray-800">
@@ -87,13 +79,13 @@ function App() {
       {/* Clear and Delete buttons */}
       <div className="grid grid-cols-2 gap-3 mb-4">
         <button
-          onClick={(e) => handleClick(e, "C")}
+          onClick={() => handleClick("C")}
           className="py-4 px-6 text-lg font-semibold border-none rounded-lg bg-red-500 text-white cursor-pointer transition-colors duration-200 hover:bg-red-600"
         >
           C
         </button>
         <button
-          onClick={(e) => handleClick(e, "Borrar")}
+          onClick={() => handleClick("Borrar")}
           className="py-4 px-6 text-lg font-semibold border-none rounded-lg bg-orange-500 text-white cursor-pointer transition-colors duration-200 hover:bg-orange-600"
         >
           ⌫
@@ -107,7 +99,7 @@ function App() {
           return (
             <button
               key={i}
-              onClick={(e) => handleClick(e, value)}
+              onClick={() => handleClick(value)}
               className={`py-5 px-4 text-xl font-bold border-none rounded-lg cursor-pointer transition-colors duration-200 ${
                 isOperator
                   ? "bg-blue-400 text-white hover:bg-blue-500"
