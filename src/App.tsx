@@ -22,6 +22,12 @@ function App() {
     "+",
   ]);
 
+  const handleKeyPress = (e: any) => {
+    if (e.key === "1") {
+      handleClick("1");
+    }
+  };
+
   function handleClick(value: string) {
     if (value === "=") {
       try {
@@ -85,7 +91,7 @@ function App() {
           C
         </button>
         <button
-          onClick={() => handleClick("Borrar")}
+          onClick={() => handleClick("Ult")}
           className="py-4 px-6 text-lg font-semibold border-none rounded-lg bg-orange-500 text-white cursor-pointer transition-colors duration-200 hover:bg-orange-600"
         >
           ⌫
@@ -100,6 +106,7 @@ function App() {
             <button
               key={i}
               onClick={() => handleClick(value)}
+              onKeyDown={handleKeyPress}
               className={`py-5 px-4 text-xl font-bold border-none rounded-lg cursor-pointer transition-colors duration-200 ${
                 isOperator
                   ? "bg-blue-400 text-white hover:bg-blue-500"
